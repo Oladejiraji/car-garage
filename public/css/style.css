@@ -1,0 +1,480 @@
+/* General */
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+button {
+    padding:0.7rem;
+    border-radius:3px;
+    border-width:0;
+    font-size:1.2rem;
+    background: var(--color-2);
+    color:var(--color-1);
+    box-shadow:var(--shadow); 
+    cursor: pointer;
+}
+:root {
+    --color-1:#1C1C1BFF;
+    --color-2:#CE4A7EFF;
+    --shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+}
+
+
+/* Laravel */
+
+html, body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 84px;
+}
+
+.links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+
+/* Header */
+
+header{
+    display:flex;
+    padding:1rem 1rem;
+    background: #333;
+    position:relative;
+    z-index: 100;
+    height:8vh;
+}
+#title{
+    flex:10;
+}
+#nav-bar{
+    flex:1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:30px;
+    cursor: pointer;
+}
+#nav-center {
+    height:3px;
+    width:15px;
+    background: var(--color-2);
+    border-radius: 1px;
+}
+#nav-center::before,
+#nav-center::after{
+    content:'';
+    height:3px;
+    width:20px;
+    position:absolute;
+    background:var(--color-2);
+    border-radius: 1px;
+}
+#nav-center::before{
+    transform: translateY(-8px);
+}
+#nav-center::after{
+    transform: translateY(8px);
+}
+#title{
+    font-weight: bold;
+    font-size:1.3rem;
+    color:var(--color-2);
+}
+
+.extend-nav {
+    position:absolute;
+    right:0;
+    top:0vh;
+    z-index: 90;
+    background-color: var(--color-2);
+    padding:0.3rem 2rem;
+    width:100%;
+    text-align: right;
+    transition-property: transform;
+    transition-duration:1s;
+    /* transform:translateY(-55px); */
+}
+.extend-nav li {
+    list-style: none;
+    margin-bottom:0.2rem;
+    margin-right:1rem;
+}
+.extend-nav a {
+    text-decoration: none;
+    color:var(--color-1);
+    font-weight: bold;
+}
+.extend-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Branding */
+
+#branding {
+    width:100%;
+    min-height: 90vh;
+    position: relative;
+}
+#branding-video video{
+    width:100%;
+    height: 90vh;
+    object-fit: cover;
+    opacity:0.7; 
+    filter:blur(1px);
+    overflow: hidden;
+}
+#branding-overlay {
+    width:100%;
+    height:90vh;
+    position: absolute;
+    top:0;
+    left:0;
+    background:var(--color-1);
+    overflow: hidden;
+    opacity:0.5;
+}
+#branding-text {
+    /* background: rgba(0, 0, 0, 1); */
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    /* padding:3rem 3rem; */
+    text-align: center;
+    border-radius:5px;
+    max-width:900px;
+    margin:auto;
+    /* opacity: 1; */
+}
+#branding-text p {
+    color:#f4f4f4;
+    font-size:2rem;
+    font-weight: bold;
+    padding-bottom:2rem;
+}
+#branding-text button {
+    animation:bounce;
+    animation-duration:1s;
+    animation-iteration-count: infinite;
+}
+
+/* Cards */
+
+#cards {
+    background: #f4f4f4;
+}
+#card-wrap {
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding:8rem 0rem;
+    align-items: center;
+    grid-gap:2rem;
+}
+.card{
+    padding:3rem 1rem;
+    text-align: center;
+    color: var(--color-2);
+    background: var(--color-1);
+    box-shadow:var(--shadow); 
+    border-radius:10px;
+    width:300px;
+    height:280px;
+}
+.large {
+    width:290px;
+    /* padding:3rem 2rem; */
+    height:400px;
+}
+.large .card-svg {
+    padding-bottom:3.5rem;
+}
+.card-svg {
+    padding-bottom:2.5rem;
+    font-size:1.5rem;
+}
+.card-text {
+    line-height:1.6rem;
+}
+
+
+/* Modal */
+
+#modal {
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    z-index: 300;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+#modal-content {
+    max-width:450px;
+    width:80%;
+    margin:auto;
+    transform:translateY(20%);
+}
+
+/* Products */
+
+#products {
+    padding:8rem 0rem;
+}
+#product-wrap {
+    max-width:1000px;
+    margin: auto;
+}
+#products h1 {
+    text-align: center;
+    padding-bottom:4rem;
+}
+#product-grid {
+    display:grid;
+    grid-gap:50px;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+}
+.product {
+    text-align: left;
+    position: relative;
+    /* border:1px solid #333; */
+    border-radius:10px;
+    box-shadow: var(--shadow);
+    padding:0rem;
+    background: var(--color-1);
+}
+.product img {
+    height:240px;
+    width:100%;
+    object-fit: cover;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    margin-bottom:2rem;
+}
+.price {
+    background:var(--color-2);
+    color:var(--color-1);
+    display:inline;
+    padding:0.6rem;
+    border-width:0;
+    border-radius:5px;
+    position:absolute;
+    font-weight: bold;
+    top:0rem;
+    right:0rem;
+}
+.product-info{
+    text-align: left;
+    padding:0rem 1.2rem 1rem 1.2rem;
+}
+.product-info div {
+    margin-bottom:1.8rem;
+}
+.bar {
+    position: relative;
+    margin:0.3rem 0rem;
+}
+.overlay {
+    position: absolute;
+    top:0;
+    left:0;
+    height:10px;
+    border-radius:5px;
+    width: 250px;
+    transition-property: width;
+    transition-duration:1s ;
+    transition-delay: 1s;
+    background: red;
+    z-index: 8;
+}
+.tab {
+    position: absolute;
+    top:0;
+    left:0;
+    height:10px;
+    border-radius:5px;
+    width: 250px;
+    transition-property: width;
+    transition-duration:1s ;
+    transition-delay: 1s;
+    background: blue;
+    z-index: 4;
+}
+
+#view {
+    text-align: center;
+}
+
+#view-btn {
+    text-align: center;
+    padding:0.7rem 1rem;
+    font-size: 1rem;
+    margin-bottom:0.7rem;
+}
+
+#garage {
+    text-align: center;
+    margin-top:5rem;
+}
+
+/* Top */
+
+#top-btn {
+    position:fixed;
+    bottom:50px;
+    right:50px;
+    background: var(--color-2);
+    color:var(--color-1);
+    font-weight: bold;
+    padding:0.5rem;
+    border-width:0;
+    border-radius:10px;
+    cursor: pointer;
+    display: none;
+}
+
+
+/* Form */
+
+#form {
+    text-align: center;
+    margin:8.3rem 0rem;
+}
+#form h1 {
+    margin-bottom:2rem;
+}
+.wrap {
+    text-align: center;
+}
+.wrap input {
+    margin-bottom:2rem;
+    box-shadow: var(--shadow);
+    border-width:0;
+    border-radius: 7px;
+    padding:0.5rem;
+    width:300px;
+}
+.wrap button {
+    margin-top:1rem;
+}
+#form p {
+    margin-top:1rem;
+    font-weight: bold;
+}
+
+
+
+/* Footer */
+footer{
+    text-align: center;
+    padding:1rem 0rem;
+    font-size:1.2rem;
+    background:var(--color-1);
+    color:var(--color-2);
+}
+
+
+
+
+/* Keyframes */
+
+@keyframes bounce{
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0px);}
+}
+
+@keyframes fade-in {
+    0%{opacity:0; transform:translateY(-40px);}
+    /* 50%{opacity:0; transform:translateY(-70px);} */
+    100%{opacity:1; transform:translateY(0px);}
+}
+.fade-in-element {
+    animation:fade-in 1.4s;
+    /* animation-delay: 0.5s; */
+}
+.hidden {
+    opacity:0;
+}
+
+
+
+@media (max-width:1020px) {
+    #card-wrap {
+        display:block;
+    }
+    .card {
+        margin:auto;
+        margin-bottom:2rem;
+    }
+    .large {
+        width:300px;
+        height:280px;
+    }
+    .large .card-svg {
+        padding-bottom:2.5rem;
+    }
+    #product-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    #product-wrap {
+        max-width:350px;
+    }
+    #branding-text p {
+        font-size :1.4rem;
+    }
+}
+
+@media (max-width:400px) {
+    #product-wrap {
+        max-width:300px;
+    }
+    #top-btn {
+        right:20px;
+    }
+}
